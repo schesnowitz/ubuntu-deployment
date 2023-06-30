@@ -3,35 +3,35 @@
     ServerName chainai.online
     ServerAlias www.chainai.online
 
-    DocumentRoot /var/www/django/ubuntu-deployment/
-
+    DocumentRoot /var/www/ubuntu-deployment/
+    Alias /favicon.ico /var/www/ubuntu-deployment/static/favicons/favicon.ico
 
     ErrorLog ${APACHE_LOG_DIR}/chainai.online_error.log
     CustomLog ${APACHE_LOG_DIR}/chainai.online_access.log combined
 
-    Alias /static /var/www/django/ubuntu-deployment/static
-    <Directory /var/www/django/ubuntu-deployment/static>
+    Alias /static /var/www/ubuntu-deployment/static
+    <Directory /var/www/ubuntu-deployment/static>
             Require all granted
     </Directory>
 
-    Alias /media /var/www/django/ubuntu-deployment/media
-    <Directory /var/www/django/ubuntu-deployment/media>
+    Alias /media /var/www/ubuntu-deployment/media
+    <Directory /var/www/ubuntu-deployment/media>
             Require all granted
      </Directory>
 
 
-    Alias /staticfiles /var/www/django/ubuntu-deployment/staticfiles
-    <Directory /var/www/django/ubuntu-deployment/staticfiles>
+    Alias /staticfiles /var/www/ubuntu-deployment/staticfiles
+    <Directory /var/www/ubuntu-deployment/staticfiles>
             Require all granted
      </Directory>
 
-    <Directory /var/www/django/ubuntu-deployment/core>
+    <Directory /var/www/ubuntu-deployment/core>
             <Files wsgi.py>
                     Require all granted
             </Files>
     </Directory>
 
-    WSGIDaemonProcess django_app python-path=/var/www/django python-home=/var/www/django/environment
+    WSGIDaemonProcess django_app python-path=/var/www/django python-home=/var/www/ubuntu-deployment/environment
     WSGIProcessGroup django_app
-    WSGIScriptAlias / /var/www/django/ubuntu-deployment/core/wsgi.py
+    WSGIScriptAlias / /var/www/ubuntu-deployment/core/wsgi.py
 </VirtualHost>    
