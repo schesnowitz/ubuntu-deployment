@@ -13,9 +13,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = 'django-insecure-mr0y2zcvyn6m4p8a5bl5bap&cnn!%r04d6hlwgnsjc31xl^off'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.79.166.202', 'chainai.online']
 
 
 # Application definition
@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'proj.urls'
+ROOT_URLCONF = 'core_project.urls'
 
 TEMPLATES = [
     {
@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'proj.wsgi.application'
+WSGI_APPLICATION = 'core_project.wsgi.application'
 
 
 # Database
@@ -113,10 +113,6 @@ USE_TZ = True
 
 
 
-
-import os
-  
-
 STATIC_URL= '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR, 'static/') 
 
@@ -127,5 +123,3 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
